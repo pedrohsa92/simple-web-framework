@@ -1,0 +1,151 @@
+/*
+* PHSA Image Tools
+* Versão 2.0.0
+* 
+* Autor: Pedro HSA
+* Website: www.phsa.com.br
+* 
+* Descrição: Uma biblioteca CSS reutilizável com estilos elegantes e modernos para facilitar o uso de imagens em desenvolvimento web.
+* 
+* Licença: MIT
+* 
+* Copyright (c) 2023 - Pedro HSA
+* 
+* Permissão concedida, mediante atribuição de crédito, para qualquer pessoa obter uma cópia desta biblioteca e utilizá-la, 
+* incluindo o direito de usar, copiar, modificar, mesclar, publicar, distribuir, sublicenciar e/ou vender cópias da biblioteca,
+* sem restrições.
+* 
+* O software é fornecido "como está", sem qualquer tipo de garantia, expressa ou implícita, incluindo, mas não se limitando a, 
+* garantias de comercialização, adequação a uma finalidade específica e não infração. Em nenhum caso os autores ou detentores de 
+* direitos autorais serão responsáveis por qualquer reclamação, danos ou outras responsabilidades, seja em ação de contrato, 
+* delito ou de outra forma, decorrentes, de ou em conexão com o software ou o uso ou outros negócios na biblioteca.
+* 
+* Não remova ou altere este comentário de créditos.
+*/
+
+:root {
+  --altura-da-moldura: 20px;
+  --largura-da-moldura: 20px;
+  --proporcao-de-tamanho: 20;
+}
+
+.molduraExterna-16 {
+  --altura-da-moldura: 16px;
+  --largura-da-moldura: 16px;
+}
+
+.molduraExterna-24 {
+  --altura-da-moldura: 24px;
+  --largura-da-moldura: 24px;
+}
+
+.molduraExterna-32 {
+  --altura-da-moldura: 32px;
+  --largura-da-moldura: 32px;
+}
+
+.molduraExterna-48 {
+  --altura-da-moldura: 48px;
+  --largura-da-moldura: 48px;
+}
+
+.molduraExterna-50, .molduraExterna-xs {
+  --altura-da-moldura: 50px;
+  --largura-da-moldura: 50px;
+}
+
+.molduraExterna-100, .molduraExterna-sm {
+  --altura-da-moldura: 100px;
+  --largura-da-moldura: 100px;
+}
+
+.molduraExterna-150, .molduraExterna-md {
+  --altura-da-moldura: 150px;
+  --largura-da-moldura: 150px;
+}
+
+.molduraExterna-200, .molduraExterna-lg {
+  --altura-da-moldura: 200px;
+  --largura-da-moldura: 200px;
+}
+
+.molduraExterna-250, .molduraExterna-xl {
+  --altura-da-moldura: 250px;
+  --largura-da-moldura: 250px;
+}
+
+.molduraExterna-portrait {
+  --altura-da-moldura: 533px;
+  --largura-da-moldura: 300px;
+}
+
+.molduraExterna {
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+  position: relative;
+  width: var(--largura-da-moldura);
+  height: var(--altura-da-moldura);
+}
+
+.molduraExterna .molduraInterna {
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  width: 100%;
+  height: 100%;
+}
+
+.molduraExterna .molduraInterna img {
+  width: auto;
+  max-width: 100%;
+  max-height: 100%;
+}
+
+@media only screen and (min-width: 480px) {
+  .molduraExterna {
+    width: calc(var(--largura-da-moldura) + (var(--proporcao-de-tamanho) * 1px));
+    height: calc(var(--altura-da-moldura) + (var(--proporcao-de-tamanho) * 1px));
+  }
+}
+
+@media only screen and (min-width: 600px) {
+  .molduraExterna {
+    width: calc(var(--largura-da-moldura) + (var(--proporcao-de-tamanho) * 2px));
+    height: calc(var(--altura-da-moldura) + (var(--proporcao-de-tamanho) * 2px));
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  .molduraExterna {
+    width: calc(var(--largura-da-moldura) + (var(--proporcao-de-tamanho) * 3px));
+    height: calc(var(--altura-da-moldura) + (var(--proporcao-de-tamanho) * 3px));
+  }
+}
+
+@media only screen and (min-width: 992px) {
+  .molduraExterna {
+    width: calc(var(--largura-da-moldura) + (var(--proporcao-de-tamanho) * 4px));
+    height: calc(var(--altura-da-moldura) + (var(--proporcao-de-tamanho) * 4px));
+  }
+}
+
+@media only screen and (min-width: 1200px) {
+  .molduraExterna {
+    width: calc(var(--largura-da-moldura) + (var(--proporcao-de-tamanho) * 5px));
+    height: calc(var(--altura-da-moldura) + (var(--proporcao-de-tamanho) * 5px));
+  }
+}
+
+@media only screen and (min-width: 1500px) {
+  .molduraExterna {
+    width: calc(var(--largura-da-moldura) + (var(--proporcao-de-tamanho) * 6px));
+    height: calc(var(--altura-da-moldura) + (var(--proporcao-de-tamanho) * 6px));
+  }
+}

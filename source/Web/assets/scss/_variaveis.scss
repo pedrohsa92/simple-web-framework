@@ -1,0 +1,63 @@
+@use 'sass:color';
+
+/* VARIÁVEIS SASS */
+$phsa-soft-bg: #d6def2;
+$phsa-soft-text: #25447f;
+$phsa-soft-hover-bg: #ecf1fb;
+$phsa-soft-hover-text: #25447f;
+
+$phsa-primary-bg: #325aa8;
+$phsa-primary-text: #ffffff;
+$phsa-primary-hover-bg: #25447f;
+$phsa-primary-hover-text: #ffffff;
+
+$phsa-strong-bg: #25447f;
+$phsa-strong-text: #ffffff;
+$phsa-strong-hover-bg: #567fce;
+$phsa-strong-hover-text: #ffffff;
+
+$phsa-sidebar-text: #868e96;
+
+$phsa-sidebar-active-bg: #25447f;
+$phsa-sidebar-active-text: #ffffff;
+
+$phsa-sidebar-hover-bg: #25447f;
+$phsa-sidebar-hover-text: #ffffff;
+
+$phsa-sidebar-submenu-active-bg: #5b83d1;
+$phsa-sidebar-submenu-active-text: #ffffff;
+
+$phsa-sidebar-submenu-hover-bg: #5b83d1;
+$phsa-sidebar-submenu-hover-text: #ffffff;
+
+/* VARIÁVEIS CSS */
+:root {
+  --phsa-soft-bg: #{$phsa-soft-bg};
+  --phsa-soft-text: #{$phsa-soft-text};
+  --phsa-soft-hover-bg: #{$phsa-soft-hover-bg};
+  --phsa-soft-hover-text: #{$phsa-soft-hover-text};
+
+  --phsa-primary-bg: #{$phsa-primary-bg};
+  --phsa-primary-text: #{$phsa-primary-text};
+  --phsa-primary-hover-bg: #{$phsa-primary-hover-bg};
+  --phsa-primary-hover-text: #{$phsa-primary-hover-text};
+
+  --phsa-strong-bg: #{$phsa-strong-bg};
+  --phsa-strong-text: #{$phsa-strong-text};
+  --phsa-strong-hover-bg: #{$phsa-strong-hover-bg};
+  --phsa-strong-hover-text: #{$phsa-strong-hover-text};
+
+  --phsa-sidebar-text: #{$phsa-sidebar-text};
+
+  --phsa-sidebar-active-bg: #{$phsa-sidebar-active-bg};
+  --phsa-sidebar-active-text: #{$phsa-sidebar-active-text};
+
+  --phsa-sidebar-hover-bg: #{$phsa-sidebar-hover-bg};
+  --phsa-sidebar-hover-text: #{$phsa-sidebar-hover-text};
+
+  --phsa-sidebar-submenu-active-bg: #{$phsa-sidebar-submenu-active-bg};
+  --phsa-sidebar-submenu-active-text: #{$phsa-sidebar-submenu-active-text};
+
+  --phsa-sidebar-submenu-hover-bg: #{$phsa-sidebar-submenu-hover-bg};
+  --phsa-sidebar-submenu-hover-text: #{$phsa-sidebar-submenu-hover-text};
+}

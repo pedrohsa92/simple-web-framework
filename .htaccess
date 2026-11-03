@@ -1,0 +1,21 @@
+# Ignorar listagem de diretórios
+IndexIgnore *
+
+# Ativar reescrita de URLs
+RewriteEngine On
+RewriteCond %{SCRIPT_FILENAME} !-f
+RewriteCond %{SCRIPT_FILENAME} !-d
+RewriteRule ^(.*)$ index.php?url=$1&%{QUERY_STRING} [NC,L]
+
+# Restringir acesso a arquivos PHP, exceto index.php
+<FilesMatch "\.php$">
+  Require all denied
+</FilesMatch>
+
+<Files index.php>
+  Require all granted
+</Files>
+
+<FilesMatch "\.(js)$">
+  AddType application/javascript .js
+</FilesMatch>
