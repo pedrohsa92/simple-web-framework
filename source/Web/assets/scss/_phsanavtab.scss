@@ -1,0 +1,8 @@
+@use 'variaveis' as *;
+
+/* PHSA NAV TAB */
+.phsaScrollItem:hover,
+.phsaScrollItem.active {
+  background-color: var(--phsa-soft-bg);
+  color: var(--phsa-soft-text);
+}

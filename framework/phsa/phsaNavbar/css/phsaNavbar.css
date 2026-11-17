@@ -1,0 +1,153 @@
+
+
+
+
+
+
+/* =====================================================
+  PHSA TABS / SCROLL NAV
+===================================================== */
+
+.phsaScrollHeader {
+  display: block !important;
+  width: 100%;
+  min-width: 100%;
+  height: 3rem;
+  border-left: 2px solid #ccc;
+  border-right: 2px solid #ccc;
+  border-top: 2px solid #ccc;
+  border-top-left-radius: 7px;
+  border-top-right-radius: 7px;
+  overflow: hidden;
+  position: relative;
+  z-index: 2;
+}
+
+.phsaScrollNav {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  overflow-x: auto;
+  overflow-y: hidden;
+  -webkit-overflow-scrolling: touch;
+  white-space: nowrap;
+  cursor: grab;
+  border-bottom: 1px solid #ccc;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.phsaScrollNav::-webkit-scrollbar {
+  display: none;
+}
+
+.phsaScrollList {
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  min-height: 100%;
+}
+
+.phsaScrollItem {
+  white-space: nowrap;
+  flex-shrink: 0;
+  padding: 0 1rem;
+  display: flex;
+  align-items: center;
+  font-size: 1rem;
+  color: #495057;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+  border-left: 2px solid transparent;
+  border-right: 2px solid transparent;
+  user-select: none;
+}
+
+.phsaScrollItem:hover,
+.phsaScrollItem.active {
+  background-color: #e1e1e1;
+  border-left-color: #ccc;
+  border-right-color: #ccc;
+}
+
+.phsaScrollItem.active {
+  border-bottom: 2px solid #e1e1e1;
+}
+
+/* =====================================================
+  PHSA TAB CONTENT
+===================================================== */
+
+.phsaTabContent {
+  min-height: 200px;
+  display: block;
+  width: 100%;
+  min-width: 100%;
+  border-left: 2px solid #ccc;
+  border-right: 2px solid #ccc;
+  border-bottom: 2px solid #ccc;
+  border-bottom-left-radius: 7px;
+  border-bottom-right-radius: 7px;
+  padding: 1rem;
+  overflow: visible;
+  position: relative;
+  z-index: 1;
+}
+
+.phsaTabItem {
+  display: none;
+  width: 100%;
+  position: relative;
+}
+
+.phsaTabItem.active {
+  display: block;
+}
+
+/* =====================================================
+  PHSA SUB TABS
+===================================================== */
+
+.phsaTabSubContent {
+  border-left: 2px solid #ccc;
+  border-right: 2px solid #ccc;
+  border-bottom: 2px solid #ccc;
+  border-radius: 0;
+  padding: 0;
+  overflow: visible;
+  position: relative;
+}
+
+.phsaTabSubContent > .phsaTabItem {
+  display: none;
+  width: 100%;
+  position: relative;
+}
+
+.phsaTabSubContent > .phsaTabItem.active {
+  display: block;
+}
+
+.phsaTabSubContent .phsaTabItem .phsaScrollHeader {
+  border: 0;
+  border-radius: 0;
+}
+
+.phsaTabSubContent .phsaTabItem .phsaTabContent {
+  border: 0;
+  border-radius: 0;
+}
+
+/* =====================================================
+  SAFETY
+===================================================== */
+
+.phsaTabContent::after,
+.phsaTabSubContent::after {
+  content: "";
+  display: block;
+  clear: both;
+}

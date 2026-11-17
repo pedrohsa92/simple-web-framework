@@ -1,0 +1,6 @@
+# Bibliotecas de terceiros mantidas localmente: fora das estatísticas de linguagem do GitHub.
+framework/** linguist-vendored
+project/identidade/** linguist-documentation
+
+# Scripts do Windows mantêm CRLF.
+*.bat text eol=crlf

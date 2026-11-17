@@ -1,0 +1,5 @@
+-- ALTERAÇÕES ESTRUTURAIS DO SIMPLE WEB
+--
+-- Mantido vazio de propósito: toda mudança de estrutura é feita nos scripts
+-- create/insert e o banco local é recriado com rodar_scripts.bat.
+-- Para mudanças pontuais, o ALTER correspondente é entregue na conversa.

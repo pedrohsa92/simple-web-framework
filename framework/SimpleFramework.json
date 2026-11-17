@@ -1,0 +1,192 @@
+{
+  "name": "phsa/framework",
+  "description": "Bibliotecas js para o projeto Simple Web!",
+  "authors": [
+    {
+      "name": "Pedro HSA",
+      "email": "pedro.hsa92@gmail.com",
+      "homepage": "https://www.phsa.com.br",
+      "role": "Developer"
+    }
+  ],
+  "framework": [
+    {
+      "name": "popper",
+      "css": null,
+      "js": "popper.min.js"
+    },
+    {
+      "name": "bootstrap",
+      "css": "css/bootstrap.min.css",
+      "css.map": "css/bootstrap.min.css.map",
+      "js": "js/bootstrap.min.js",
+      "js.map": "js/bootstrap.min.js.map"
+    },
+    {
+      "name": "jquery",
+      "css": null,
+      "js": "jquery-3.7.1.js"
+    },
+    {
+      "name": "animate",
+      "css": "animate.min.css",
+      "js": null
+    },
+    {
+      "name": "aos",
+      "css": "aos.min.css",
+      "js": "aos.min.js"
+    },
+    {
+      "name": "bootstrap-multiselect",
+      "css": "css/bootstrap-multiselect.min.css",
+      "js": "js/bootstrap-multiselect.min.js"
+    },
+    {
+      "name": "boxicons",
+      "css": "css/boxicons.min.css",
+      "js": null
+    },
+    {
+      "name": "browser-image-compression",
+      "css": null,
+      "js": "browser-image-compression.js"
+    },
+    {
+      "name": "counterup",
+      "css": null,
+      "js": "counterup.min.js"
+    },
+    {
+      "name": "cropperjs",
+      "css": "cropper.min.css",
+      "js": "cropper.min.js"
+    },
+    {
+      "name": "datatables",
+      "css": "datatables.min.css",
+      "js": "datatables.min.js"
+    },
+    {
+      "name": "fontawesome",
+      "css": "css/all.min.css",
+      "js": "js/all.min.js"
+    },
+    {
+      "name": "fullcalendar",
+      "css": null,
+      "js": "dist/index.global.min.js"
+    },
+    {
+      "name": "html-to-image",
+      "css": null,
+      "js": "html-to-image.min.js"
+    },
+    {
+      "name": "glightbox",
+      "css": "css/glightbox.min.css",
+      "js": "js/glightbox.min.js"
+    },
+    {
+      "name": "icofont",
+      "css": "icofont.min.css",
+      "js": null
+    },
+    {
+      "name": "isotope",
+      "css": null,
+      "js": "isotope.pkgd.min.js"
+    },
+    {
+      "name": "jquerymask",
+      "css": null,
+      "js": "jquery.mask.min.js"
+    },
+    {
+      "name": "lightbox",
+      "css": "css/lightbox.min.css",
+      "js": "js/lightbox.min.js"
+    },
+    {
+      "name": "venobox",
+      "css": "venobox.min.css",
+      "js": "venobox.min.js"
+    },
+    {
+      "name": "owlcarousel",
+      "css": "css/owl.carousel.min.css",
+      "js": "js/owl.carousel.min.js"
+    },
+    {
+      "name": "pace",
+      "css": null,
+      "js": "pace.min.js"
+    },
+    {
+      "name": "phsa",
+      "css": [
+        "phsaImageTool/css/phsaImageTool.css",
+        "phsaNavbar/css/phsaNavbar.css"
+      ],
+      "js": [
+        "phsaPassForce/js/phsaPassForce.js",
+        "phsaNavbar/js/phsaNavbar.js"
+      ]
+    },
+    {
+      "name": "slick",
+      "css": "slick.css",
+      "js": "slick.min.js"
+    },
+    {
+      "name": "superfish",
+      "css": "css/superfish.css",
+      "js": "js/superfish.min.js"
+    },
+    {
+      "name": "sweetalert2",
+      "css": "sweetalert2.min.css",
+      "js": "sweetalert2.all.min.js"
+    },
+    {
+      "name": "swiper",
+      "css": "swiper-bundle.min.css",
+      "js": "swiper-bundle.min.js"
+    },
+    {
+      "name": "table2excel",
+      "css": null,
+      "js": "table2excel.js"
+    },
+    {
+      "name": "tinymce",
+      "css": null,
+      "js": "tinymce.min.js"
+    },
+    {
+      "name": "touchSwipe",
+      "css": null,
+      "js": "jquery.touchSwipe.min.js"
+    },
+    {
+      "name": "waypoints",
+      "css": null,
+      "js": "jquery.waypoints.min.js"
+    },
+    {
+      "name": "wow",
+      "css": null,
+      "js": "dist/wow.min.js"
+    },
+    {
+      "name": "xlsx",
+      "css": null,
+      "js": "xlsx.full.min.js"
+    },
+    {
+      "name": "purecounter",
+      "css": null,
+      "js": "purecounter_vanilla.js"
+    }
+  ]
+}

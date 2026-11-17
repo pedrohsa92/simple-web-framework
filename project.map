@@ -1,0 +1,275 @@
+projeto
+│
+├── framework/
+│   ├── bootstrap/css/bootstrap.min.css
+│   ├── animate/animate.min.css
+│   ├── aos/aos.min.css
+│   ├── bootstrap-multiselect/css/bootstrap-multiselect.min.css
+│   ├── boxicons/css/boxicons.min.css
+│   ├── datatables/datatables.min.css
+│   ├── fontawesome/css/all.min.css
+│   ├── glightbox/css/glightbox.min.css
+│   ├── icofont/icofont.min.css
+│   ├── lightbox/css/lightbox.min.css
+│   ├── owlcarousel/css/owl.carousel.min.css
+│   ├── phsa/phsaImageTool/css/phsaImageTool.css
+│   ├── phsa/phsaNavbar/css/phsaNavbar.css
+│   ├── slick/slick.css
+│   ├── superfish/css/superfish.css
+│   ├── sweetalert2/sweetalert2.min.css
+│   ├── swiper/swiper-bundle.min.css
+│   ├── popper/popper.min.js
+│   ├── bootstrap/js/bootstrap.min.js
+│   ├── jquery/jquery-3.7.1.js
+│   ├── aos/aos.min.js
+│   ├── bootstrap-multiselect/js/bootstrap-multiselect.min.js
+│   ├── counterup/counterup.min.js
+│   ├── datatables/datatables.min.js
+│   ├── fontawesome/js/all.min.js
+│   ├── fullcalendar/dist/index.global.min.js
+│   ├── glightbox/js/glightbox.min.js
+│   ├── isotope/isotope.pkgd.min.js
+│   ├── jquerymask/jquery.mask.min.js
+│   ├── lightbox/js/lightbox.min.js
+│   ├── owlcarousel/js/owl.carousel.min.js
+│   ├── pace/pace.min.js
+│   ├── phsa/phsaPassForce/js/phsaPassForce.js
+│   ├── phsa/phsaNavbar/js/phsaNavbar.js
+│   ├── slick/slick.min.js
+│   ├── superfish/js/superfish.min.js
+│   ├── sweetalert2/sweetalert2.all.min.js
+│   ├── swiper/swiper-bundle.min.js
+│   ├── table2excel/table2excel.js
+│   ├── tinymce/tinymce.min.js
+│   ├── touchSwipe/jquery.touchSwipe.min.js
+│   ├── waypoints/jquery.waypoints.min.js
+│   ├── wow/dist/wow.min.js
+│   ├── xlsx/xlsx.full.min.js
+│   ├── purecounter/purecounter_vanilla.js
+│   ├── SimpleFramework.php
+│   └── ...
+├── project/
+│   └── scripts/
+│        ├── alter.sql
+│        ├── create 01 - estrutura do sistema.sql
+│        ├── create 02 - regra de negocio.sql
+│        ├── insert.sql
+│        └── ...
+├── source/
+│   ├── controller/
+│   │    ├── sistema
+│   │    │    ├── ApiWhatsappController.php
+│   │    │    ├── CadastroBasicoController.php
+│   │    │    ├── ClienteController.php
+│   │    │    ├── ContatoController.php
+│   │    │    ├── DashboardController.php
+│   │    │    ├── EmpresaController.php
+│   │    │    ├── EnderecoController.php
+│   │    │    ├── MensagemController.php
+│   │    │    ├── NivelAcessoController.php
+│   │    │    ├── ProdutoController.php
+│   │    │    ├── PwaController.php
+│   │    │    ├── RelatorioController.php
+│   │    │    ├── UsuarioController.php
+│   │    │    └── ...
+│   │    ├── site
+│   │    │    ├── HomeController.php
+│   │    │    └── ...
+│   │    └── ...
+│   ├── core/
+│   │    ├── SimpleConnect.php
+│   │    ├── SimpleController.php
+│   │    ├── SimpleModel.php
+│   │    ├── SimpleResponse.php
+│   │    ├── SimpleRouter.php
+│   │    ├── SimpleSession.php
+│   │    ├── SimpleUpload.php
+│   │    ├── SimpleValidator.php
+│   │    ├── SimpleWeb.php
+│   │    └── ...
+│   ├── engine/
+│   │    ├── Helper.php
+│   │    └── ...
+│   ├── model/
+│   │    ├── ApiWhatsappModel.php
+│   │    ├── ClienteModel.php
+│   │    ├── ContatoModel.php
+│   │    ├── EmpresaModel.php
+│   │    ├── EnderecoModel.php
+│   │    ├── MensagemModel.php
+│   │    ├── NivelAcessoModel.php
+│   │    ├── PermissaoModel.php
+│   │    ├── PermissaoRelatorioModel.php
+│   │    ├── ProdutoModel.php
+│   │    ├── ProjetoModel.php
+│   │    ├── PwaModel.php
+│   │    ├── SimpleTableModel.php
+│   │    ├── TipoContatoModel.php
+│   │    ├── UsuarioModel.php
+│   │    └── ...
+│   ├── phpmailer/
+│   │    ├── template
+│   │    │    ├── recuperar_acesso
+│   │    │    │			├── recuperar_acesso.html
+│   │    │    │     └── ...
+│   │    │    ├── confirmar_email
+│   │    │    │			├── confirmar_email.html
+│   │    │    │     └── ...
+│   │    │    ├── default
+│   │    │    │			├── default.html
+│   │    │    │     └── ...
+│   │    │    └── ...
+│   │    ├── phpmailer.php
+│   │    └── ...
+│   └── web
+│        ├── assets
+│        │    ├── css
+│        │    │    ├── global.css
+│        │    │    ├── phsa.css
+│        │    │    ├── phsa.css.map
+│        │    │    ├── sistema.css
+│        │    │    ├── site.css
+│        │    │    └── ...
+│        │    ├── js
+│        │    │    ├── global.js
+│        │    │    ├── simpleform.js
+│        │    │    ├── simplemodal.js
+│        │    │    ├── sistema.js
+│        │    │    └── ...
+│        │    ├── scss
+│        │    │    ├── _phsanavtab.scss
+│        │    │    ├── _simplecss.scss
+│        │    │    ├── _variaveis.scss
+│        │    │    ├── styles.scss
+│        │    │    └── ...
+│        │    └── ...
+│        ├── simpleweb
+│        │    ├── startProject.php
+│        │    └── ...
+│        ├── sistema
+│        │    ├── api_whatsapp
+│        │    │    ├── consultar.php
+│        │    │    ├── gerenciar.php
+│        │    │    ├── rotina.php
+│        │    │    └── ...
+│        │    ├── cadastrobasico
+│        │    │    ├── basico.php
+│        │    │    ├── list.php
+│        │    │    ├── registro.php
+│        │    │    └── ...
+│        │    ├── cliente
+│        │    │    ├── acesso.php
+│        │    │    ├── cadastro.php
+│        │    │    ├── cadastroDadosBasicos.php
+│        │    │    ├── cadastroDadosComplementares.php
+│        │    │    ├── form.php
+│        │    │    ├── historico.php
+│        │    │    ├── list.php
+│        │    │    └── ...
+│        │    ├── contato
+│        │    │    ├── form.php
+│        │    │    └── ...
+│        │    ├── dashboard
+│        │    │    ├── dashboard.php
+│        │    │    └── ...
+│        │    ├── empresa
+│        │    │    ├── cadastro.php
+│        │    │    ├── cadastroDadosBasicos.php
+│        │    │    ├── cadastroDadosComplementares.php
+│        │    │    ├── documentacao.php
+│        │    │    ├── form.php
+│        │    │    ├── historico.php
+│        │    │    ├── list.php
+│        │    │    ├── parametroProduto.php
+│        │    │    ├── parametroPwa.php
+│        │    │    └── ...
+│        │    ├── endereco
+│        │    │    ├── form.php
+│        │    │    └── ...
+│        │    ├── mensagem
+│        │    │    ├── list.php
+│        │    │    └── ...
+│        │    ├── nivelacesso
+│        │    │    ├── list.php
+│        │    │    └── ...
+│        │    ├── produto
+│        │    │    ├── cadastro.php
+│        │    │    ├── categoria.php
+│        │    │    ├── categoriaLista.php
+│        │    │    ├── estoque.php
+│        │    │    ├── form.php
+│        │    │    ├── galeria.php
+│        │    │    ├── list.php
+│        │    │    ├── parametro.php
+│        │    │    ├── unidadedemedida.php
+│        │    │    ├── unidadedemedidaLista.php
+│        │    │    └── ...
+│        │    ├── relatorio
+│        │    │    ├── arquivo
+│        │    │    ├── form.php
+│        │    │    ├── list.php
+│        │    │    └── ...
+│        │    ├── usuario
+│        │    │    ├── acesso.php
+│        │    │    ├── bloqueado.php
+│        │    │    ├── cadastro.php
+│        │    │    ├── cadastroDadosBasicos.php
+│        │    │    ├── cadastroDadosComplementares.php
+│        │    │    ├── form.php
+│        │    │    ├── historico.php
+│        │    │    ├── list.php
+│        │    │    ├── login.php
+│        │    │    └── ...
+│        │    └── ...
+│        ├── site
+│        │    ├── home
+│        │    │    ├── home.php
+│        │    │    └── ...
+│        │    └── ...
+│        └── template
+│             ├── sistema
+│             │    ├── 404.php
+│             │    ├── breadcrumb.php
+│             │    ├── erro.php
+│             │    ├── footer.php
+│             │    ├── header.php
+│             │    ├── login.php
+│             │    ├── sidebar.php
+│             │    ├── sistema.php
+│             │    └── ...
+│             ├── site
+│             │    ├── 404.php
+│             │    ├── footer.php
+│             │    ├── header.php
+│             │    ├── hero.php
+│             │    ├── site.php
+│             │    └── ...
+│             └── ...
+├── storage/
+│   ├── empresamodelo/
+│   │    ├── favicon.png
+│   │    ├── logo.png
+│   │    └── ...
+│   └── global/
+│        ├── favicon.png
+│        ├── logo.png
+│        ├── planodefundo.jpg
+│        ├── semimagem.png
+│        ├── semperfil.png
+│        └── ...
+├── vendor/
+│   ├── bin/...
+│   ├── composer/
+│   ├── autoload.php
+│   └── ...
+├── .env
+├── .gitignore
+├── .htaccess
+├── composer.json
+├── composer.lock
+├── index.php
+├── info.php
+├── offline.html
+├── project.map
+├── README.md
+└── ...

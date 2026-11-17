@@ -1,0 +1,213 @@
+
+
+
+
+
+
+/* GLOBAL  */
+	a, .nolink{
+	  text-transform: none!important;
+	  text-decoration: none!important;
+	  cursor: pointer!important;
+	  color: #3b5998;
+	}
+
+	.nolink:hover{
+	  color: #dc3545;
+	}
+
+	/* Espaçamento entre os botões do swal */
+	.swal2-actions .btn-danger {
+	  margin-right: 10px;
+	}
+
+	/* esconder botão upgrade do tinecme */
+	.tox-promotion .tox-promotion-link{
+		display: none!important;
+	}
+
+/* pace: efeito load page */
+	.pace {
+		-webkit-pointer-events: none;
+		pointer-events: none;
+		-webkit-user-select: none;
+		-moz-user-select: none;
+		user-select: none;
+	}
+
+	.pace-inactive {
+		display: none;
+	}
+
+	.pace .pace-progress {
+		background: #D72630;
+		position: fixed;
+		z-index: 2000;
+		top: 0;
+		right: 100%;
+		width: 100%;
+		height: 2px;
+	}
+
+/* Preloader */
+	#preloader {
+	  position: fixed;
+	  top: 0;
+	  left: 0;
+	  right: 0;
+	  bottom: 0;
+	  background-color: #fff;
+	  z-index: 9999;
+	  display: flex;
+	  justify-content: center;
+	  align-items: center;
+	}
+
+	#preloader .spinner {
+	  width: 50px;
+	  height: 50px;
+	  border: 5px solid #f3f3f3;
+	  border-top: 5px solid #007bff;
+	  border-radius: 50%;
+	  animation: spin 1s linear infinite;
+	}
+
+	@keyframes spin {
+	  0% { transform: rotate(0deg); }
+	  100% { transform: rotate(360deg); }
+	}
+
+/* Scroll-to-Top Button */
+	.scroll-to-top {
+	  position: fixed;
+	  bottom: 20px;
+	  right: 20px;
+	  background-color: rgba(0, 0, 0, 0.6);
+	  color: #ffffff;
+	  padding: 8px;
+	  border-radius: 50%;
+	  font-size: 1.2rem;
+	  display: none;
+	  z-index: 999;
+	  cursor: pointer;
+	  transition: all 0.3s ease;
+	  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3);
+	}
+
+	.scroll-to-top:hover {
+	  background-color: rgba(0, 0, 0, 0.8);
+	  transform: scale(1.1);
+	}
+
+	.scroll-to-top i {
+	  display: block;
+	  transition: transform 0.3s ease;
+	}
+
+	.scroll-to-top:hover i {
+	  transform: translateY(-2px);
+	}
+
+/* cardPlanoDefundo */
+  .cardPlanoDefundo {
+    height: 150px;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    margin-bottom: 50px;
+  }
+
+  .action-buttons {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    display: flex;
+    gap: 5px;
+  }
+
+  .divCardLogoContainer {
+    position: absolute;
+    bottom: -50px;
+    left: 20px;
+  }
+
+  .molduraExterna-cardlogo {
+    --altura-da-moldura: 50px;
+    --largura-da-moldura: 50px;
+  }
+
+  .molduraExterna-cardlogo img {
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid #fff;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1), 0px 1px 3px rgba(0, 0, 0, 0.08);
+  }
+
+	.action-buttons-logo {
+	  position: absolute;
+	  top: 50%;
+	  left: 50%;
+	  transform: translate(-50%, -50%);
+	  display: none;
+	  z-index: 2;
+	}
+
+	#divCardLogo:hover .action-buttons-logo {
+	  display: flex;
+	  gap: 10px;
+	}
+
+  @media (min-width: 600px) and (max-width: 767px) {
+    .cardPlanoDefundo {
+      margin-bottom: 35px;
+    }
+    .cardPlanoDefundo {
+      height: 180px;
+    }
+    .divCardLogoContainer {
+      bottom: -45px;
+    }
+    .molduraExterna-cardlogo {
+      --altura-da-moldura: 95px;
+      --largura-da-moldura: 95px;
+    }
+  }
+
+  @media (max-width: 599px) {
+    .cardPlanoDefundo {
+      margin-bottom: 25px;
+    }
+    .cardPlanoDefundo {
+      height: 120px;
+    }
+    .divCardLogoContainer {
+      bottom: -35px;
+    }
+    .molduraExterna-cardlogo {
+      --altura-da-moldura: 75px;
+      --largura-da-moldura: 75px;
+    }
+  }
+
+/* Valores somente leitura usados nas abas Histórico e nos resumos. */
+.phsaFakeInput {
+  min-height: 58px;
+  border: 1px solid #dee2e6;
+  border-radius: 0.85rem;
+  background: var(--bs-body-bg, #fff);
+  padding: 0.55rem 0.75rem 0.45rem;
+}
+
+.phsaFakeInputLabel {
+  margin-bottom: 0.35rem;
+  color: #6c757d;
+  font-size: 0.72rem;
+  line-height: 1;
+}
+
+.phsaFakeInputValue {
+  min-height: 1.2rem;
+  color: var(--bs-body-color, #212529);
+  font-size: 0.875rem;
+  line-height: 1.35;
+}

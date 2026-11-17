@@ -1,0 +1,11 @@
+vendor/*
+
+# Arquivos gerados pela aplicação. Apenas storage/global (imagens da plataforma) é versionado.
+storage/*
+!storage/global/
+
+# Variáveis de ambiente (senhas e chaves). Nunca versionar.
+.env
+
+# Log local do script de banco
+project/script/rodar_scripts.log
