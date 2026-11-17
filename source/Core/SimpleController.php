@@ -487,6 +487,7 @@ class SimpleController
     $empresa = $this->getEmpresaAtiva();
     $organizacao = $this->getOrganizacaoAtiva();
     $projeto = $this->projeto;
+    $e = static fn($valor): string => htmlspecialchars(trim((string) $valor), ENT_QUOTES | ENT_SUBSTITUTE, 'UTF-8');
 
     $title = $options['title']
       ?? $empresa->emp_nomefantasia
@@ -499,6 +500,7 @@ class SimpleController
       ?? $organizacao->org_observacao
       ?? $projeto->prj_descricao
       ?? 'Página sem descrição';
+    $description = mb_substr(trim(preg_replace('/\s+/', ' ', strip_tags((string) $description))), 0, 300);
 
     $image = $options['image'] ?? Helpers::storage(
       $empresa->emp_logo
@@ -507,22 +509,67 @@ class SimpleController
         ?? 'storage/global/logo.png'
     );
 
-    $url = $options['url'] ?? $this->baseUrl() . ($_SERVER['REQUEST_URI'] ?? '');
+    $url = $options['url'] ?? $this->urlCanonica();
+    $siteName = $options['siteName'] ?? $projeto->prj_titulo ?? $title;
+    $tipo = $options['type'] ?? 'website';
+    $locale = $options['locale'] ?? 'pt_BR';
+    $imageAlt = $options['imageAlt'] ?? $siteName;
 
-    $this->pagina->meta = "
-      <meta name='description' content='{$description}'>
-      <meta property='og:title' content='{$title}'>
-      <meta property='og:description' content='{$description}'>
-      <meta property='og:image' content='{$image}'>
-      <meta property='og:url' content='{$url}'>
+    $meta = "
+      <title>{$e($title)}</title>
+      <meta name='description' content='{$e($description)}'>
+      <link rel='canonical' href='{$e($url)}'>";
+
+    if (!empty($options['robots'])) {
+      $meta .= "
+      <meta name='robots' content='{$e($options['robots'])}'>";
+    }
+
+    $meta .= "
+      <meta property='og:type' content='{$e($tipo)}'>
+      <meta property='og:site_name' content='{$e($siteName)}'>
+      <meta property='og:locale' content='{$e($locale)}'>
+      <meta property='og:title' content='{$e($title)}'>
+      <meta property='og:description' content='{$e($description)}'>
+      <meta property='og:url' content='{$e($url)}'>
+      <meta property='og:image' content='{$e($image)}'>
+      <meta property='og:image:alt' content='{$e($imageAlt)}'>";
+
+    if (!empty($options['imageWidth']) && !empty($options['imageHeight'])) {
+      $meta .= "
+      <meta property='og:image:width' content='" . (int) $options['imageWidth'] . "'>
+      <meta property='og:image:height' content='" . (int) $options['imageHeight'] . "'>";
+    }
+
+    $meta .= "
       <meta name='twitter:card' content='summary_large_image'>
-      <link rel='canonical' href='{$url}'>
-      <title>{$title}</title>";
+      <meta name='twitter:title' content='{$e($title)}'>
+      <meta name='twitter:description' content='{$e($description)}'>
+      <meta name='twitter:image' content='{$e($image)}'>";
+
+    $this->pagina->meta = $meta;
+  }
+
+  /**
+   * URL canônica da página atual: endereço base do ambiente + caminho, sem query string.
+   */
+  protected function urlCanonica(): string
+  {
+    $base = $this->baseUrl();
+    $caminho = (string) parse_url($_SERVER['REQUEST_URI'] ?? '/', PHP_URL_PATH);
+    $prefixo = rtrim((string) parse_url($base, PHP_URL_PATH), '/');
+
+    if ($prefixo !== '' && str_starts_with($caminho, $prefixo)) {
+      $caminho = substr($caminho, strlen($prefixo));
+    }
+
+    $caminho = '/' . trim($caminho, '/');
+
+    return $caminho === '/' ? $base . '/' : $base . $caminho;
   }
 
   public function setWebAppMetaTags(array $options = []): void
   {
-    $empresa = $this->getEmpresaAtiva();
     $organizacao = $this->getOrganizacaoAtiva();
 
     $favicon = $options['favicon'] ?? Helpers::storage(
@@ -531,14 +578,18 @@ class SimpleController
         ?? 'storage/global/favicon.png'
     );
 
-    $themeColor = $options['theme-color'] ?? '#000000';
+    $themeColor = htmlspecialchars((string) ($options['theme-color'] ?? '#000000'), ENT_QUOTES, 'UTF-8');
+    $faviconIco = __DIR__ . '/../../storage/global/favicon.ico';
 
     $this->pagina->webapp = "
       <meta name='theme-color' content='{$themeColor}'>
       <meta name='mobile-web-app-capable' content='yes'>
       <meta name='apple-mobile-web-app-status-bar-style' content='black-translucent'>
-      <link rel='apple-touch-icon' href='{$favicon}'>
-      <link rel='shortcut icon' href='{$favicon}'>";
+      <link rel='icon' type='image/png' href='{$favicon}'>"
+      . (file_exists($faviconIco) ? "
+      <link rel='icon' href='" . Helpers::url('storage/global/favicon.ico') . "' sizes='any'>" : '')
+      . "
+      <link rel='apple-touch-icon' href='{$favicon}'>";
   }
 
   public function setPwa(?int $empId = null): void
@@ -578,6 +629,12 @@ class SimpleController
 
   public function setStructuredData(array $options = []): void
   {
+    // Permite enviar um JSON-LD completo (ex.: @graph com Organization, Person e WebPage).
+    if (!empty($options['json']) && is_array($options['json'])) {
+      $this->pagina->structuredata = '<script type="application/ld+json">' . json_encode($options['json'], JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES) . '</script>';
+      return;
+    }
+
     $empresa = $this->getEmpresaAtiva();
     $organizacao = $this->getOrganizacaoAtiva();
 
@@ -668,7 +725,8 @@ class SimpleController
   public function setAssetsCss($cssFiles): void
   {
     foreach ((array) $cssFiles as $cssFile) {
-      $filePath = __DIR__ . "/../Web/assets/css/{$cssFile}";
+      $fileName = explode('?', (string) $cssFile, 2)[0];
+      $filePath = __DIR__ . "/../Web/assets/css/{$fileName}";
       $cssUrl = $this->baseUrl() . "/source/Web/assets/css/{$cssFile}";
 
       if (file_exists($filePath)) {

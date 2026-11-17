@@ -1,6 +1,6 @@
 <?php
 
-namespace Source\Controller\Site;
+namespace Source\Controller\site;
 
 use Source\Model\ContratacaoModel;
 use Source\Model\PagarmeModel;

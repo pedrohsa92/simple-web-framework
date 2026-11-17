@@ -1,6 +1,6 @@
 <?php
 
-namespace Source\Controller\Sistema;
+namespace Source\Controller\sistema;
 
 use Helpers;
 use Source\Core\SimpleController;
@@ -20,6 +20,11 @@ class ContextoController extends SimpleController
   public function listar()
   {
     $this->validarPermissoes(['contexto.trocar']);
+
+    if (\Helpers::ambienteDedicado()) {
+      echo json_encode((new SimpleResponse('Atenção', 'Este ambiente é dedicado a uma organização. Não há troca de contexto.'))->warning()->noDestroy());
+      exit;
+    }
 
     $conteudo = trim((string) ($_POST['conteudo'] ?? ''));
     $getContextos = $this->getContextosDisponiveis($conteudo);
@@ -50,6 +55,11 @@ class ContextoController extends SimpleController
   public function trocar()
   {
     $this->validarPermissoes(['contexto.trocar']);
+
+    if (\Helpers::ambienteDedicado()) {
+      echo json_encode((new SimpleResponse('Atenção', 'Este ambiente é dedicado a uma organização. Não há troca de contexto.'))->warning()->noDestroy());
+      exit;
+    }
 
     $orgId = (int) ($_POST['org_id'] ?? 0);
     $empId = (int) ($_POST['emp_id'] ?? 0);

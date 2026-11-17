@@ -146,6 +146,7 @@ $router->group('empresa', 'sistema', 'EmpresaController', function ($router) {
   $router->get('basico/{cadastro}', 'basicoList');
   $router->post('basico/{cadastro}/salvar', 'basicoSalvar');
   $router->post('basico/{cadastro}/status', 'basicoAlterarStatus');
+  $router->get('form', 'form', 'formNovo');
   $router->get('form/{id}', 'form');
   $router->get('list');
 
@@ -166,6 +167,7 @@ $router->group('usuario', 'sistema', 'UsuarioController', function ($router) {
   $router->get('basico/{cadastro}', 'basicoList');
   $router->post('basico/{cadastro}/salvar', 'basicoSalvar');
   $router->post('basico/{cadastro}/status', 'basicoAlterarStatus');
+  $router->get('form', 'form', 'formNovo');
   $router->get('form/{id}', 'form');
   $router->get('list');
   $router->get('bloqueado');
@@ -182,6 +184,7 @@ $router->group('usuario', 'sistema', 'UsuarioController', function ($router) {
 }, 'usuario.');
 
 $router->group('nivelacesso', 'sistema', 'NivelAcessoController', function ($router) {
+  $router->get('form', 'form', 'formNovo');
   $router->get('form/{id}', 'form');
   $router->get('list');
   $router->post('salvarNivelAcesso');

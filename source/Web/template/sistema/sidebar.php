@@ -397,7 +397,7 @@
     </li>
 
     <ul class="submenu list-unstyled profile-submenu">
-      <?php if (!empty($contexto) && Helpers::pode('contexto.trocar')): ?>
+      <?php if (!empty($contexto) && !Helpers::ambienteDedicado() && Helpers::pode('contexto.trocar')): ?>
         <li>
           <button
             type="button"

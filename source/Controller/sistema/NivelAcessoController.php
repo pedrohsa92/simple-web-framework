@@ -1,6 +1,6 @@
 <?php
 
-namespace Source\Controller\Sistema;
+namespace Source\Controller\sistema;
 
 use Helpers;
 use Source\Core\SimpleController;
@@ -80,9 +80,11 @@ class NivelAcessoController extends SimpleController
     exit;
   }
 
-  public function form(array $url): void
+  public function form($url = null): void
   {
-    if ($url['id'] > 0) {
+    $id = is_array($url) ? (int) ($url['id'] ?? 0) : (int) ($url ?? 0);
+
+    if ($id > 0) {
       $this->validarPermissoes([
         'nivelacesso.visualizar',
         'nivelacesso.atualizar'
@@ -97,8 +99,8 @@ class NivelAcessoController extends SimpleController
     $nivelAcesso = null;
     $permissoesNivel = [];
 
-    if ($url['id'] > 0) {
-      $getNivelAcesso = $this->nivelAcessoModel->getNivelAcessoById($url['id']);
+    if ($id > 0) {
+      $getNivelAcesso = $this->nivelAcessoModel->getNivelAcessoById($id);
 
       if (!$getNivelAcesso->status || $getNivelAcesso->total == 0) {
         $this->render('template/sistema/erro', [
@@ -112,7 +114,7 @@ class NivelAcessoController extends SimpleController
       }
 
       $nivelAcesso = $getNivelAcesso->data[0];
-      $permissoesNivel = (new PermissaoModel())->getArrayByNivel($url['id']);
+      $permissoesNivel = (new PermissaoModel())->getArrayByNivel($id);
     }
 
     $this->setBreadcrumb([

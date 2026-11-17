@@ -96,7 +96,7 @@
           </button>
         </li>
 
-        <?php if (!empty($contexto) && Helpers::pode('contexto.trocar')): ?>
+        <?php if (!empty($contexto) && !Helpers::ambienteDedicado() && Helpers::pode('contexto.trocar')): ?>
           <li class="nav-item d-lg-none w-100">
             <button
               type="button"
@@ -234,7 +234,7 @@
               </div>
             </li>
 
-            <?php if (!empty($contexto) && Helpers::pode('contexto.trocar')): ?>
+            <?php if (!empty($contexto) && !Helpers::ambienteDedicado() && Helpers::pode('contexto.trocar')): ?>
               <li>
                 <button type="button" class="dropdown-item" onclick="fgbAbrirModalContexto()">
                   <i class="fa-solid fa-repeat me-2 icon"></i>Trocar organização

@@ -1,6 +1,6 @@
 <?php
 
-namespace Source\Controller\Sistema;
+namespace Source\Controller\sistema;
 
 use Source\Core\SimpleController;
 use Source\Core\SimpleResponse;

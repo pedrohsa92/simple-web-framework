@@ -464,6 +464,14 @@ class Helpers
       ];
     }
 
+    /**
+     * Ambiente dedicado (BCD): CONF_ORG_ID fixa a organização e não há troca de contexto.
+     */
+    public static function ambienteDedicado(): bool
+    {
+        return defined('CONF_ORG_ID') && trim((string) CONF_ORG_ID) !== '';
+    }
+
     public static function pode(string|array $permissao, int $perNivel = 1): bool
     {
       return self::validarPermissao($permissao, $perNivel)->status;

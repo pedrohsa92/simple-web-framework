@@ -43,6 +43,7 @@ storage/                  arquivos físicos (storage/global = imagens da platafo
 
 ### Princípios gerais
 
+- **Maiúsculas e minúsculas:** o servidor (Linux) diferencia letras maiúsculas de minúsculas, o Windows não. Namespace e nome de pasta precisam ser idênticos: os controllers usam `namespace Source\Controller\sistema;` e `Source\Controller\site;` (minúsculo, como as pastas). O mesmo vale para nomes de classes, arquivos, views e imagens.
 - Reutilize componentes, helpers, estilos e fluxos existentes antes de criar variantes locais. Quando vários módulos compartilham um comportamento, prefira uma implementação configurável a duplicar telas e regras.
 - Valide permissões, contexto ativo, relacionamentos e escopo no servidor. Uma rota ou ID recebido do navegador nunca é autorização suficiente.
 - Use os nomes oficiais do domínio de forma consistente em telas, mensagens, rotas e código. No módulo de Conhecimento, o agrupamento chama-se **Categoria** (nunca "Grupo").

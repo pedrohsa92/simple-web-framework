@@ -3,6 +3,14 @@ IndexIgnore *
 
 # Ativar reescrita de URLs
 RewriteEngine On
+
+# Arquivos internos nunca são servidos: .env, .git e outros arquivos ocultos,
+# scripts, documentação, dependências e o código-fonte do back-end.
+RewriteRule (^|/)\.(?!well-known/) - [R=404,L]
+RewriteRule ^(project|vendor)(/|$) - [R=404,L]
+RewriteRule ^source/(Core|Controller|Model|Service|Engine|Phpmailer)(/|$) - [R=404,L]
+RewriteRule ^(composer\.(json|lock)|AGENTS\.md|README\.md|LICENSE|project\.map)$ - [R=404,L]
+
 RewriteCond %{SCRIPT_FILENAME} !-f
 RewriteCond %{SCRIPT_FILENAME} !-d
 RewriteRule ^(.*)$ index.php?url=$1&%{QUERY_STRING} [NC,L]
@@ -19,3 +27,12 @@ RewriteRule ^(.*)$ index.php?url=$1&%{QUERY_STRING} [NC,L]
 <FilesMatch "\.(js)$">
   AddType application/javascript .js
 </FilesMatch>
+
+# Cabeçalhos de segurança
+<IfModule mod_headers.c>
+  Header always set X-Content-Type-Options "nosniff"
+  Header always set X-Frame-Options "SAMEORIGIN"
+  Header always set Referrer-Policy "strict-origin-when-cross-origin"
+  Header always set Permissions-Policy "camera=(), microphone=(), geolocation=()"
+  Header always set Strict-Transport-Security "max-age=31536000" env=HTTPS
+</IfModule>
